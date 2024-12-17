@@ -30,7 +30,7 @@ class PongGame:
         my_screen.onkey(key="s",fun=player1.move_down)
 
         while game_is_on: 
-            time.sleep(0.1)
+            time.sleep(ball.move_speed)
             my_screen.update()
 
             ball.move()
