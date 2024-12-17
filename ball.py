@@ -23,3 +23,7 @@ class Ball(Turtle):
     def bounce_paddle(self):
         """Changes the direction of the ball if it collides the either of the two paddle"""
         self.x_move *= -1
+
+    def reset_position(self):
+        """Resets the position of the ball after it goes out of bounds"""
+        self.goto(0,0)

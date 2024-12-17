@@ -1,6 +1,7 @@
 from turtle import Screen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import ScoreBoard
 import time
 
 class PongGame:
@@ -19,6 +20,8 @@ class PongGame:
         player2 = Paddle(350,0)
         player1 = Paddle(-350,0)
         ball = Ball()
+        scoreboard = ScoreBoard()
+        scoreboard.writescore(player1,player2)
         game_is_on = True
 
         my_screen.onkey(key="i",fun=player2.move_up)
@@ -38,6 +41,18 @@ class PongGame:
             if player1.detect_collision(ball) or player2.detect_collision(ball) :
                 #Detect if ball is hit by the paddle
                 ball.bounce_paddle()
+
+            if ball.xcor() > 380:
+                #Detect if R paddle misses the ball
+                player1.score += 1
+                ball.reset_position()
+                scoreboard.writescore(player1,player2)
+
+            if ball.xcor() < -380:
+                #Detect if L paddle misses the ball
+                player2.score += 1
+                ball.reset_position()
+                scoreboard.writescore(player1,player2)
 
         my_screen.exitonclick()
 

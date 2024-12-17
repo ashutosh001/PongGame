@@ -8,6 +8,7 @@ class Paddle(Turtle):
         self.up()
         self.shapesize(stretch_len=1,stretch_wid=5)
         self.goto(x=x_axis,y=y_axis)
+        self.score = 0
 
     def move_up(self):
         """Move the paddle up based on user input"""
@@ -23,7 +24,7 @@ class Paddle(Turtle):
 
     def detect_collision(self,ball):
         """Detects if the ball is hit by the paddle"""
-        if (ball.xcor() > 340 or ball.xcor() < -340) and self.distance(ball) < 50:
+        if (ball.xcor() > 325 or ball.xcor() < -325) and self.distance(ball) < 50:
             return True
         return False
     
