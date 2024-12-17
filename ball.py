@@ -27,3 +27,4 @@ class Ball(Turtle):
     def reset_position(self):
         """Resets the position of the ball after it goes out of bounds"""
         self.goto(0,0)
+        self.bounce_paddle()
