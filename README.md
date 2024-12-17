@@ -2,7 +2,9 @@
 PongGame using Python and TurtleGraphics
 
 # Preview
-WIP
+![Preview1](images/1.gif)
+
+![Preview2](images/2.gif)
 
 # How to Play
 * Run main.py
