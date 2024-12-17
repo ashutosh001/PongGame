@@ -23,16 +23,7 @@ class Paddle(Turtle):
 
     def detect_collision(self,ball):
         """Detects if the ball is hit by the paddle"""
-        ball_x = ball.xcor()
-        ball_y = ball.ycor()
-
-        paddle_left = self.xcor() -10
-        paddle_right = self.xcor() + 10
-        paddle_top = self.ycor() + 50
-        paddle_bottom = self.ycor() - 50
-
-        if ball_x > 340 or ball_x < -340:
-            if (paddle_left <= ball_x <= paddle_right) or (paddle_bottom <= ball_y <= paddle_top):
-                return True
+        if (ball.xcor() > 340 or ball.xcor() < -340) and self.distance(ball) < 50:
+            return True
         return False
     
